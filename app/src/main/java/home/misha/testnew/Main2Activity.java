@@ -18,6 +18,6 @@ public class Main2Activity extends AppCompatActivity {
         textViewName.setText(pytannja.getName());
         textViewText.setText(pytannja.getDetali());
 
-
+ 
     }
 }
