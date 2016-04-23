@@ -2,6 +2,7 @@ package home.misha.testnew;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,7 +55,10 @@ public class MyAdapter extends BaseAdapter {
                 view = lInflater.inflate(R.layout.list, parent, false);
 
             Pytannja pytannja = getPytannja(position);
-            ((TextView) view.findViewById(R.id.text_nameList)).setText(pytannja.getName());
+           TextView namePytannja=(TextView) view.findViewById(R.id.text_nameList);
+                   namePytannja.setText(pytannja.getName());
+                   namePytannja.setOnClickListener(onClickRadio);
+                   namePytannja.setTag(position);
             String[] vidpovidi_s = pytannja.getVidpovidi();
             RadioButton[] radioButton=new RadioButton[10];
             for (int i=0; i<10; i++){
@@ -123,6 +127,14 @@ public class MyAdapter extends BaseAdapter {
             case R.id.radioButton10: {
                 (getPytannja((Integer)v.getTag())).setVybir(10);
                 break;}
+            case R.id.text_nameList: {
+                Intent intent=new Intent(ctx, Main2Activity.class);
+                intent.putExtra("pytannja", getPytannja((Integer)v.getTag()));
+                ctx.startActivity(intent);
+
+                break;
+            }
+
 
 
         }

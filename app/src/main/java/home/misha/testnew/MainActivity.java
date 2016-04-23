@@ -1,6 +1,5 @@
 package home.misha.testnew;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -162,13 +161,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public   void onkTest(View view) {
-        Intent intent=new Intent(MainActivity.this, Main2Activity.class);
-        intent.putExtra("pytannja",pytannja);
-        startActivity(intent);
-
-
-    }
 
 
     public class MyTimerTasck extends TimerTask {
