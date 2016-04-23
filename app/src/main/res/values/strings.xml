@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">testnew</string>
+    <string name="start">Старт</string>
+    <string name="pause">Пауза</string>
+</resources>
